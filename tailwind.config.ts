@@ -54,11 +54,11 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				daymarket: {
-					100: '#E5DEFF',
+					100: '#ffffff',
 					200: '#D3E4FD',
-					300: '#FDE1D3',
-					400: '#F2FCE2',
-					500: '#9b87f5',
+					300: '#df3136',
+					400: '#f5f5f5',
+					500: '#eb1b23',
 				},
 				nightmarket: {
 					100: '#1A1F2C',
