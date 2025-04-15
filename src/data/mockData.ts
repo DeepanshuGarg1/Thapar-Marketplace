@@ -1,4 +1,3 @@
-
 import { Listing, BarterOffer } from '../models/Listing';
 
 // Generate a random ID

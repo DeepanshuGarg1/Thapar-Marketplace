@@ -67,7 +67,7 @@ const Homepage = () => {
                 </motion.div>
 
                 <motion.div
-                    className="relative"
+                    className="relative hidden lg:block"
                     initial={{opacity: 0, scale: 0.9}}
                     animate={{opacity: 1, scale: 1}}
                     transition={{duration: 0.5, delay: 0.2}}
