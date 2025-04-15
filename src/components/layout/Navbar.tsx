@@ -27,11 +27,11 @@ import { format } from 'date-fns';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
-  const { theme, currentTime } = useTheme();
+  const { theme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full sticky top-0 z-50 bg-background border-b border-border glass-morphism">
+    <nav className="w-full sticky top-0 z-50 bg-background border-b border-border">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           {/* Logo and brand */}
@@ -47,9 +47,9 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             <div className="text-sm text-muted-foreground">
-              {format(currentTime, 'EEEE, h:mm a')}
+              {format(new Date(), 'EEEE, h:mm a')}
             </div>
-            
+
             <Link to="/listings">
               <Button variant="ghost">Listings</Button>
             </Link>
