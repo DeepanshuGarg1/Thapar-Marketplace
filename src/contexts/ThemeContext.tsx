@@ -6,7 +6,6 @@ type MarketTime = 'day' | 'night';
 type ThemeContextType = {
     theme: MarketTime;
     setTheme: (theme: MarketTime) => void;
-    toggleTheme: () => void;
     isDayMarket: boolean;
     isNightMarket: boolean;
     isMarketOpen: boolean;
@@ -87,20 +86,24 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         applyThemeClass(newTheme);
     };
 
-    const toggleTheme = () => {
-        const newTheme = theme === 'day' ? 'night' : 'day';
-        setTheme(newTheme);
-    };
 
+    // const value: ThemeContextType = {
+    //     theme,
+    //     setTheme,
+    //     isDayMarket: theme === 'day',
+    //     isNightMarket: theme === 'night',
+    //     isMarketOpen,
+    //     currentTime,
+    // };
     const value: ThemeContextType = {
         theme,
         setTheme,
-        toggleTheme,
         isDayMarket: theme === 'day',
         isNightMarket: theme === 'night',
         isMarketOpen,
         currentTime,
     };
+
 
     return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 };

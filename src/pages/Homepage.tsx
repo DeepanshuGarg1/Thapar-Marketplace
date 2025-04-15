@@ -73,7 +73,7 @@ const Homepage = () => {
                     transition={{duration: 0.5, delay: 0.2}}
                 >
                     <div className="relative w-64 h-64 md:w-80 md:h-80">
-                        <div className="absolute inset-0 rounded-full bg-primary/20 animate-spin-slow"></div>
+                        <div className="absolute inset-0 rounded-full bg-primary/20"></div>
                         <div className="absolute inset-4 rounded-full bg-background flex items-center justify-center">
                             {isDayMarket ? (
                                 <Sun className="h-24 w-24 text-daymarket-500"/>
