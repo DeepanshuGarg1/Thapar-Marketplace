@@ -1,5 +1,4 @@
-
-export type Category = 
+export type Category =
   // Day Categories
   | 'books' 
   | 'electronics' 
