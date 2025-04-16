@@ -109,11 +109,13 @@ const Listings = () => {
         </div>
         
         <ListingFilters onFilterChange={handleFilterChange} />
-        
+
+        {/*preload skeletons*/}
         {isLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {renderSkeletons()}
           </div>
+            //if filteredlistings exist and are not empty
         ) : filteredListings.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredListings.map((listing, index) => (
@@ -128,6 +130,7 @@ const Listings = () => {
             ))}
           </div>
         ) : (
+          //   if filtered listings don't exist
           <div className="text-center py-12">
             <h3 className="text-2xl font-semibold mb-2">No listings found</h3>
             <p className="text-muted-foreground mb-6">

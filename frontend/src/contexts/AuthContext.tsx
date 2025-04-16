@@ -16,8 +16,8 @@ export type User = {
 const MOCK_USER: User = {
   id: '1',
   email: 'student@thapar.edu',
-  name: 'Sample Student',
-  hostel: 'Hostel J',
+  name: 'Deepanshu',
+  hostel: 'Hostel M',
   verified: true,
   reputation: 4.8,
   avatar: 'https://api.dicebear.com/7.x/bottts/svg?seed=student',
@@ -61,11 +61,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Login function - simplified for demo
   const login = async (email: string, password: string) => {
     setLoading(true);
-    
+
     try {
       // Mock API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       // Validate email domain
       if (!email.endsWith('@thapar.edu')) {
         toast({
@@ -75,11 +75,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         });
         throw new Error('Invalid email domain');
       }
-      
+
       // Set user in state and localStorage
       setUser(MOCK_USER);
       localStorage.setItem('thapar_marketplace_user', JSON.stringify(MOCK_USER));
-      
+
       toast({
         title: "Welcome back!",
         description: "You have successfully logged in",
