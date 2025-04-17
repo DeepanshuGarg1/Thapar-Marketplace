@@ -69,6 +69,68 @@ By offering these distinct environments, we aim to eliminate clutter from inform
 
 ---
 
+## 🧑‍🔧 Setup Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/creative-computing-society/Thapar-Marketplace.git
+   cd thapar-marketplace
+2. **🐳 Docker Instructions**
+
+   To containerize and run the project using   Docker:
+
+  - **Build the Docker image**
+    ```bash
+     docker build -t thapar-marketplace .
+  - **Run the container**
+      ```bash
+      docker run -p 3000:3000 --env-file .env thapar-marketplace
+3. **Set up environment variables**
+
+  - Copy .env.example and rename it to .env
+  - Fill in your secrets and credentials
+
+4. Run DB migrations (Prisma)
+    ```bash
+    npx prisma migrate dev
+5. **Start the dev server**
+    ```bash
+    npm run dev
+      # or
+    yarn dev
+---
+
+## 🔁 Auth Callback URLs
+
+### Development:
+    http://localhost:3000/api/auth/callback/google
+
+---
+## 🔀 *Flow Diagram*
+mermaid 
+graph TD;
+
+    A[User Sign In] --> B[View Hostel List] 
+    B --> C[Select a Hostel]
+    C --> D[View Listed Items]
+    D --> E[Buy/Sell/Exchange Options]
+    
+    E -->|Buy| F[Send Request to Seller]
+    F --> G[Seller Approves?]
+    G -- No --> D
+    G -- Yes --> H[Reveal Seller Contact]
+    H --> I[Users Communicate & Complete Transaction]
+
+    E -->|Sell| J[Create New Listing]
+    J --> D
+    
+    E -->|Exchange| M[Propose Item Swap]
+    M --> N[Other User Approves?]
+    N -- No --> D
+    N -- Yes --> H
+---
 ## 🌟 Vision
 
 A safer, smarter, and structured way to trade on campus — where trust, convenience, and community matter.
+
+
