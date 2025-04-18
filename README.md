@@ -107,7 +107,7 @@ By offering these distinct environments, we aim to eliminate clutter from inform
 
 ---
 ## 🔀 *Flow Diagram*
-mermaid 
+```mermaid 
 graph TD;
 
     A[User Sign In] --> B[View Hostel List] 
@@ -128,6 +128,7 @@ graph TD;
     M --> N[Other User Approves?]
     N -- No --> D
     N -- Yes --> H
+```
 ---
 ## 🌟 Vision
 
